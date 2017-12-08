@@ -367,9 +367,8 @@ var Rigidbody2D = function () {
             c.closePath();
         }
     }, {
-        key: 'update',
-        value: function update(rbs) {
-
+        key: 'updateCollision',
+        value: function updateCollision(rbs) {
             this.checkMouse();
             this.handleScreenCollision();
             //Handle RB collisions
@@ -382,6 +381,10 @@ var Rigidbody2D = function () {
                     this.connect(rbs[i]);
                 }
             }
+        }
+    }, {
+        key: 'updateDraw',
+        value: function updateDraw(rbs) {
             //Update position
             this.pos = this.pos.add(this.vel);
             this.draw();
@@ -391,12 +394,12 @@ var Rigidbody2D = function () {
         value: function draw() {
             c.beginPath();
             c.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2, false);
+            c.lineWidth = 5;
             c.strokeStyle = this.color;
             c.stroke();
-            if (this.filled) {
-                c.fillStyle = this.color;
-                c.fill();
-            }
+            // if(this.filled){
+            c.fillStyle = this.color;
+            c.fill();
             c.closePath();
         }
     }]);
@@ -441,7 +444,10 @@ function update(currentTime) {
     //Clear and draw
     c.clearRect(0, 0, canvas.width, canvas.height);
     balls.forEach(function (ball) {
-        ball.update(balls);
+        ball.updateCollision(balls);
+    });
+    balls.forEach(function (ball) {
+        ball.updateDraw(balls);
     });
 }
 
