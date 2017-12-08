@@ -27,11 +27,10 @@ const mouse = new Mouse();
 let time, mouseDown = false;
 
 const colors = [
-    '#2a2a2a',
-    '#6b7783',
-    '#511c16',
-    '#0c3c60',
-    '#ff703f'
+    '#bac3e0',
+    '#d1e1ff',
+    '#98d4ff',
+    '#27a8f7'
 ];
 
 // Event Listeners
@@ -150,7 +149,7 @@ class Rigidbody2D{
 let balls
 function start() {
     balls = []
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 50; i++) {
         const rb = new Rigidbody2D();
         const x = randomIntFromRange(rb.radius, canvas.width - rb.radius);
         const y = randomIntFromRange(rb.radius, canvas.height - rb.radius);

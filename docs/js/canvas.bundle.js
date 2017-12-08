@@ -275,7 +275,7 @@ var mouse = new Mouse();
 var time = void 0,
     mouseDown = false;
 
-var colors = ['#2a2a2a', '#6b7783', '#511c16', '#0c3c60', '#ff703f'];
+var colors = ['#bac3e0', '#d1e1ff', '#98d4ff', '#27a8f7'];
 
 // Event Listeners
 addEventListener('mousemove', function (event) {
@@ -413,7 +413,7 @@ var Rigidbody2D = function () {
 var balls = void 0;
 function start() {
     balls = [];
-    for (var i = 0; i < 100; i++) {
+    for (var i = 0; i < 50; i++) {
         var rb = new Rigidbody2D();
         var x = randomIntFromRange(rb.radius, canvas.width - rb.radius);
         var y = randomIntFromRange(rb.radius, canvas.height - rb.radius);
