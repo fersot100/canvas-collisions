@@ -80,7 +80,7 @@ class Rigidbody2D{
 
 
         this.pos = new Vector2(x,y);
-        this.initialSpeed = 6;
+        this.initialSpeed = 2;
         this.vel = new Vector2(
             randomIntFromRange(-this.initialSpeed, this.initialSpeed),
             randomIntFromRange(-this.initialSpeed, this.initialSpeed));
